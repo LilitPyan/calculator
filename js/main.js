@@ -1,4 +1,5 @@
 const display = document.getElementById('calc');
+display.innerHTML = '0';
 
 let str = '';
 
@@ -20,10 +21,6 @@ function operators(op) {
   display.innerHTML = str;
 }
 
-function clear() {
-  display.innerHTML = "";
-}
-
 function equal() {
   let firstNum = '';
   let lastNum = '';
@@ -43,6 +40,7 @@ function equal() {
 
     str = str.replace(`${firstNum}+${lastNum}`, (+firstNum) + (+lastNum));
     display.innerHTML = str;
+
 
     firstNum = '';
     lastNum = '';
@@ -67,4 +65,45 @@ function equal() {
     firstNum = '';
     lastNum = '';
   }
+
+  while (str.indexOf('*') !== -1) {
+    for (let i = 0; i < str.indexOf('*'); i++) {
+      if (str[i] !== '+' || str[i] !== '-' || str[i] !== '*' || str[i] !== '/') {
+        firstNum = firstNum + str[i];
+      }
+    }
+
+    for (let i = str.indexOf('*') + 1; i < str.length; i++) {
+      if (str[i] !== '+' || str[i] !== '-' || str[i] !== '*' || str[i] !== '/') {
+        lastNum = lastNum + str[i];
+      }
+    }
+
+    str = str.replace(`${firstNum}*${lastNum}`, (+firstNum) * (+lastNum));
+    display.innerHTML = str;
+
+    firstNum = '';
+    lastNum = '';
+  }
+
+  while (str.indexOf('/') !== -1) {
+    for (let i = 0; i < str.indexOf('/'); i++) {
+      if (str[i] !== '+' || str[i] !== '-' || str[i] !== '*' || str[i] !== '/') {
+        firstNum = firstNum + str[i];
+      }
+    }
+
+    for (let i = str.indexOf('/') + 1; i < str.length; i++) {
+      if (str[i] !== '+' || str[i] !== '-' || str[i] !== '*' || str[i] !== '/') {
+        lastNum = lastNum + str[i];
+      }
+    }
+
+    str = str.replace(`${firstNum}/${lastNum}`, (+firstNum)/(+lastNum));
+    display.innerHTML = str;
+
+    firstNum = '';
+    lastNum = '';
+  }
+
 }
