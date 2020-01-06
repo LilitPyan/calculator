@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="css/main.css" rel="stylesheet">
+  <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+<div class="calc">
+  <div class="display">
+    <p id="calc"></p>
+  </div>
+  <div class="line">
+    <button onclick="getNum('1')">1</button>
+    <button onclick="getNum('2')">2</button>
+    <button onclick="getNum('3')">3</button>
+    <button onclick="getNum('4')">4</button>
+  </div>
+  <div class="line">
+    <button onclick="getNum('5')">5</button>
+    <button onclick="getNum('6')">6</button>
+    <button onclick="getNum('7')">7</button>
+    <button onclick="getNum('8')">8</button>
+  </div>
+  <div class="line">
+    <button onclick="getNum('9')">9</button>
+    <button onclick="getNum('0')">0</button>
+    <button onclick="operators('+')">+</button>
+    <button onclick="operators('-')">-</button>
+  </div>
+  <div class="line">
+    <button onclick="operators('*')">*</button>
+    <button onclick="operators('/')">/</button>
+    <button onclick="equal()">=</button>
+    <button onclick="clear()">C</button>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
