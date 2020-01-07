@@ -17,26 +17,32 @@
     <button onclick="getNum('1')">1</button>
     <button onclick="getNum('2')">2</button>
     <button onclick="getNum('3')">3</button>
-    <button onclick="getNum('4')">4</button>
+    <button  class="op" onclick="operators('/')">/</button>
   </div>
   <div class="line">
+    <button onclick="getNum('4')">4</button>
     <button onclick="getNum('5')">5</button>
     <button onclick="getNum('6')">6</button>
+    <button class="op" onclick="operators('*')">*</button>
+  </div>
+  <div class="line">
     <button onclick="getNum('7')">7</button>
     <button onclick="getNum('8')">8</button>
-  </div>
-  <div class="line">
     <button onclick="getNum('9')">9</button>
-    <button onclick="getNum('0')">0</button>
-    <button onclick="operators('+')">+</button>
-    <button onclick="operators('-')">-</button>
+    <button class="op" onclick="operators('-')">-</button>
   </div>
   <div class="line">
-    <button onclick="operators('*')">*</button>
-    <button onclick="operators('/')">/</button>
-    <button onclick="equal()">=</button>
-    <button onclick="clear()">C</button>
+    <button class="op" onclick="brackets('(')">(</button>
+    <button class="op" onclick="brackets(')')">)</button>
+    <button onclick="getNum('0')">0</button>
+    <button class="op" onclick="operators('+')">+</button>
   </div>
+  <div class="line">
+    <button class="op" onclick="clear()">C</button>
+    <button class="op" onclick="operators(')')">,</button>
+    <button class="op" onclick="equal()">=</button>
+  </div>
+
 </div>
 <script src="js/main.js"></script>
 </body>

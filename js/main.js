@@ -21,6 +21,23 @@ function operators(op) {
   display.innerHTML = str;
 }
 
+function brackets(bracket) {
+  if (str.length === 0 && bracket === ')') {
+    return;
+  }
+
+  if ( str.indexOf('+') === -1 && str.indexOf('-') === -1 && str.indexOf('*') === -1 && str.indexOf('/') === -1 && bracket === ')' ) {
+    return;
+  }
+
+  if (str[str.length - 1] === '+' || str[str.length - 1] === '-' || str[str.length - 1] === '*' || str[str.length - 1] === '/'  ){
+    return;
+  }
+
+  str = str + bracket;
+  display.innerHTML = str;
+}
+
 function equal() {
   let firstNum = '';
   let lastNum = '';
@@ -41,10 +58,10 @@ function equal() {
     str = str.replace(`${firstNum}+${lastNum}`, (+firstNum) + (+lastNum));
     display.innerHTML = str;
 
-
     firstNum = '';
     lastNum = '';
   }
+
 
   while (str.indexOf('-') !== -1) {
     for (let i = 0; i < str.indexOf('-'); i++) {
@@ -105,5 +122,4 @@ function equal() {
     firstNum = '';
     lastNum = '';
   }
-
 }
